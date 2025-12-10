@@ -1,0 +1,16 @@
+{
+  "id": "summary_workflow",
+  "start_node": "split",
+  "nodes": [
+    { "id": "split", "tool_name": "split_text" },
+    { "id": "summarize", "tool_name": "generate_summaries" },
+    { "id": "merge", "tool_name": "merge_summaries" },
+    { "id": "refine_summary_node", "tool_name": "refine_summary" }
+  ],
+  "edges": {
+    "split": "summarize",
+    "summarize": "merge",
+    "merge": "refine_summary_node"
+  }
+}
+
